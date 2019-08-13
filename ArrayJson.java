@@ -1,10 +1,7 @@
 package ExJSON;
 
-import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Reader;
 import java.util.Scanner;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -18,27 +15,20 @@ public class ArrayJson {
 		System.out.print("Informe a quantidade de valores: ");
 		int t = entrada.nextInt();
 		
-		int[] vet = new int[t];
+		int[] vetor = new int[t];
 		
 		for (int i = 0; i < t; i++) {
 			System.out.print("Informe o "+(i+1)+"º valor: ");
-			vet[i] = entrada.nextInt();
+			vetor[i] = entrada.nextInt();
 		}
-		
-		
-		
 		
 		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
 		FileWriter writer = new FileWriter("arrayjson.json");
-		writer.write(gson.toJson(vet));
+		writer.write(gson.toJson(vetor));
 		writer.close();
 		
-		Reader reader = new FileReader(new File(ClassLoader.getSystemResource("arrayjson.json").getFile()));
-	
-		Vetor vetor = gson.fromJson(reader, Vetor.class);
 		
-		System.out.println("Vetor: "+vetor.getVetor());
 		/*VetorJson vetor = new VetorJson();
 		vetor.vetor = vet;
 		
