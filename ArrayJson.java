@@ -27,28 +27,7 @@ public class ArrayJson {
 		FileWriter writer = new FileWriter("arrayjson.json");
 		writer.write(gson.toJson(vetor));
 		writer.close();
-		
-		
-		/*VetorJson vetor = new VetorJson();
-		vetor.vetor = vet;
-		
-		BufferedReader bufferedReader = new BufferedReader(new FileReader("arrayjson.json"));
-		Type collectionType = new TypeToken<List<VetorJson>>() {}.getType();
-        Object Vetor = gson.toJson(vet);
-		
-		System.out.println(Vetor);
-     //   return vet1 != null ? vet1: new vet1;
-		
-		/*instancia o vetor e preenche com os dados informados
-		VetorJson vetor = new VetorJson();
-		vetor.vetor = vet;
-		
-		//como o objeto da classe GSON já estã instanciado
-		String aux = gson.toJson(vetor);
-		
-		System.out.println(aux);*/
-		
-		
+				
 		entrada.close();
 	}
 	
